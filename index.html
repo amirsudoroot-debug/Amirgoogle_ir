@@ -100,6 +100,22 @@ footer b{color:var(--accent)}
 @media(max-width:760px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{margin-top:18px}.search-hint{display:none}}
 @media(max-width:440px){.product-grid{gap:9px}.product{padding:14px;border-radius:17px}.product h3{font-size:12px}.product p{font-size:10px;min-height:60px}.product-icon{width:42px;height:42px;flex-basis:42px}.buy-btn{font-size:9px;padding:9px}.section-title{font-size:16px}.brand{font-size:19px}.social-grid{gap:7px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+.order-overlay{position:fixed;inset:0;z-index:500;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.76);backdrop-filter:blur(9px)}
+.order-overlay.show{display:flex}
+.order-modal{width:min(460px,100%);max-height:88vh;overflow:auto;position:relative;padding:25px;border-radius:24px;border:1px solid var(--accent);background:linear-gradient(145deg,#171d29,#0b1019);box-shadow:0 25px 80px #000b,0 0 28px rgba(var(--accent-rgb),.13);animation:rise .22s ease}
+.order-close{position:absolute;left:15px;top:14px;width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:#ffffff0b;color:var(--text);font-size:20px}
+.order-modal h3{font-size:19px;font-weight:900;margin:4px 35px 10px 0;color:var(--text)}
+.order-modal .order-intro{font-size:13px;line-height:2.1;color:var(--muted);margin-bottom:8px}
+.order-product{font-size:12px;color:var(--accent);margin:0 0 16px;line-height:1.8}
+.order-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.order-link{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:11px;border-radius:14px;background:#ffffff08;border:1px solid var(--line);font-size:12px;font-weight:800;transition:.2s}
+.order-link i{font-size:18px;color:var(--accent)}
+.order-link:hover{border-color:var(--accent);transform:translateY(-2px);background:rgba(var(--accent-rgb),.09)}
+.order-phone{grid-column:1/-1}
+.order-note{font-size:10px;line-height:1.9;color:var(--muted);margin-top:15px;text-align:center}
+@media(max-width:380px){.order-modal{padding:20px}.order-links{gap:8px}.order-link{font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -210,6 +226,24 @@ footer b{color:var(--accent)}
 <button class="nav-item" data-target="contact" onclick="navigateTo('contact',this)"><i class="fa-solid fa-headset"></i><span>ارتباط</span></button>
  </div>
 </nav>
+
+<div class="order-overlay" id="orderOverlay" role="dialog" aria-modal="true" aria-labelledby="orderTitle" onclick="if(event.target===this)closeOrderModal()">
+ <div class="order-modal">
+  <button class="order-close" type="button" onclick="closeOrderModal()" aria-label="بستن">×</button>
+  <h3 id="orderTitle">ثبت سفارش و ارتباط با ما</h3>
+  <p class="order-intro">کاربر گرامی، برای خرید محصول یا دریافت راهنمایی، از طریق یکی از راه‌های ارتباطی زیر با ما در تماس باشید.</p>
+  <p class="order-product" id="orderProduct"></p>
+  <div class="order-links">
+   <a class="order-link" href="https://t.me/Sudo_root_txt" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> تلگرام</a>
+   <a class="order-link" href="https://eitaa.com/ClickOnMe313" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-paper-plane"></i> ایتا</a>
+   <a class="order-link" href="https://virasty.com/Amirgoogle" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-at"></i> ویراستی</a>
+   <a class="order-link" href="https://ble.ir/09028596072" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-comment-dots"></i> بله</a>
+   <a class="order-link order-phone" href="tel:09028596072"><i class="fa-solid fa-phone"></i> تماس تلفنی: 09028596072</a>
+  </div>
+  <p class="order-note">با انتخاب هر گزینه، به صفحه ارتباطی مربوط هدایت می‌شوید.</p>
+ </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
@@ -266,16 +300,21 @@ function showToast(message){
  clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2600);
 }
 function buy(product){
- const message='سلام، برای خرید یا دریافت اطلاعات محصول «'+product+'» از فروشگاه مجازی امیر گوگل پیام می‌دهم.';
- const encoded=encodeURIComponent(message);
- const choice=window.prompt('برای پیگیری سفارش «'+product+'» یکی از راه‌ها را انتخاب کنید:\\n1 = تلگرام\\n2 = ایتا\\n3 = ویراستی\\n4 = بله\\n5 = تماس تلفنی');
- if(choice==='1')window.open('https://t.me/Sudo_root_txt','_blank','noopener');
- else if(choice==='2')window.open('https://eitaa.com/ClickOnMe313','_blank','noopener');
- else if(choice==='3')window.open('https://virasty.com/Amirgoogle','_blank','noopener');
- else if(choice==='4')window.open('https://ble.ir/09028596072','_blank','noopener');
- else if(choice==='5')window.location.href='tel:09028596072';
- else if(choice!==null)showToast('گزینه معتبر نیست؛ لطفاً دوباره تلاش کنید.');
+ const overlay=document.getElementById('orderOverlay');
+ const productLabel=document.getElementById('orderProduct');
+ productLabel.textContent=product ? 'محصول انتخاب‌شده: '+product : '';
+ overlay.classList.add('show');
+ document.body.style.overflow='hidden';
 }
+function closeOrderModal(){
+ const overlay=document.getElementById('orderOverlay');
+ overlay.classList.remove('show');
+ document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(event){
+ if(event.key==='Escape')closeOrderModal();
+});
+
 const navTargets=['home','education','digital','contact'];
 const observer=new IntersectionObserver(entries=>{
  entries.forEach(entry=>{
