@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b10">
+<meta name="description" content="فروشگاه مجازی امیر گوگل؛ آموزش، محصولات دیجیتال و خدمات تبلیغاتی">
+<title>فروشگاه مجازی امیر گوگل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{--bg:#080a0f;--surface:#10141d;--surface2:#171d28;--text:#f4f6fb;--muted:#929bab;--line:rgba(255,255,255,.085);--accent:#ff8a25;--accent-rgb:255,138,37;--good:#00d69b;--radius:22px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{font-family:Vazirmatn,sans-serif;background:var(--bg);color:var(--text);padding-bottom:100px;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(110px);opacity:.12}
+body:before{width:340px;height:340px;background:var(--accent);top:-180px;right:-120px}
+body:after{width:300px;height:300px;background:#245cff;bottom:-180px;left:-130px;opacity:.07}
+a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}
+.container{width:min(1120px,92%);margin:auto}
+.topbar-wrap{position:sticky;top:0;z-index:50;background:rgba(8,10,15,.84);backdrop-filter:blur(22px);border-bottom:1px solid var(--line)}
+.topbar{height:74px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-size:21px;font-weight:900;letter-spacing:-.5px}
+.brand-mark{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,var(--accent),color-mix(in srgb,var(--accent),#fff 18%));color:#111;box-shadow:0 8px 28px rgba(var(--accent-rgb),.22);font-size:18px}
+.brand small{display:block;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:2.2px;margin-top:-2px}
+.top-actions{display:flex;gap:9px}
+.round-btn{width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--text);transition:.2s}
+.round-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero{position:relative;margin:28px auto 24px;padding:clamp(25px,5vw,54px);border:1px solid var(--line);border-radius:30px;overflow:hidden;background:radial-gradient(ellipse at 12% 12%,rgba(var(--accent-rgb),.17),transparent 43%),linear-gradient(135deg,#151c29,#0d1119 68%)}
+.hero:after{content:"</>";position:absolute;left:4%;bottom:-48px;font-family:monospace;font-size:clamp(100px,18vw,205px);font-weight:900;color:rgba(255,255,255,.035);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(var(--accent-rgb),.3);background:rgba(var(--accent-rgb),.09);color:var(--accent);padding:8px 13px;border-radius:30px;font-size:11px;font-weight:800}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--good);box-shadow:0 0 12px var(--good)}
+.hero h1{font-size:clamp(30px,6.3vw,58px);line-height:1.55;font-weight:900;margin:17px 0 10px;letter-spacing:-1.5px}
+.hero h1 strong{color:var(--accent)}
+.type-line{display:block;color:var(--accent);font-size:clamp(18px,3.2vw,27px);min-height:43px}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--accent);vertical-align:middle;margin-right:4px;animation:blink .8s steps(2) infinite}
+.hero p{color:#aab2c0;line-height:2.15;font-size:13px;max-width:570px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}
+.btn{border:1px solid transparent;border-radius:13px;padding:12px 18px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:12px;font-weight:800;transition:.22s}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.btn-main{background:var(--accent);color:#111;box-shadow:0 8px 25px rgba(var(--accent-rgb),.17)}
+.btn-ghost{background:rgba(255,255,255,.045);border-color:var(--line);color:var(--text)}
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin-top:29px}
+.stat b{display:block;font-size:17px;color:var(--text)}
+.stat span{font-size:10px;color:var(--muted)}
+.search-row{display:flex;gap:12px;align-items:center;margin:22px 0 34px}
+.searchbox{height:55px;flex:1;display:flex;align-items:center;gap:12px;padding:0 17px;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.searchbox i{color:var(--accent)}
+.searchbox input{width:100%;border:0;outline:0;background:transparent;color:var(--text);font-size:12px}
+.searchbox input::placeholder{color:#778091}
+.search-hint{font-size:10px;color:var(--muted);white-space:nowrap}
+.section{margin:38px 0;scroll-margin-top:95px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}
+.section-title{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:900}
+.section-icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(var(--accent-rgb),.1);color:var(--accent);font-size:17px}
+.section-sub{font-size:9px;color:#758093;letter-spacing:1.5px;font-weight:800}
+.product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.product{position:relative;min-width:0;padding:19px;background:linear-gradient(145deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;animation:rise .55s both}
+.product:before{content:"";position:absolute;top:0;right:19px;width:38px;height:2px;background:var(--accent);border-radius:3px;opacity:.9}
+.product:hover{transform:translateY(-5px);border-color:rgba(var(--accent-rgb),.42);box-shadow:0 16px 38px rgba(0,0,0,.22)}
+.product-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.product-icon{width:48px;height:48px;flex:0 0 48px;border-radius:15px;display:grid;place-items:center;background:rgba(var(--accent-rgb),.1);color:var(--accent);font-size:19px}
+.product-badge{font-size:9px;color:var(--accent);background:rgba(var(--accent-rgb),.09);padding:6px 9px;border-radius:8px}
+.product h3{font-size:14px;font-weight:900;margin:15px 0 8px}
+.product p{min-height:48px;color:var(--muted);font-size:11px;line-height:2.05}
+.product-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:17px;padding-top:13px;border-top:1px solid var(--line)}
+.product-footer small{font-size:9px;color:#7f8999}
+.buy-btn{border:0;border-radius:10px;background:var(--accent);color:#111;padding:9px 12px;font-size:10px;font-weight:900;white-space:nowrap;transition:.2s}
+.buy-btn:hover{filter:brightness(1.12);transform:translateX(-2px)}
+.empty{display:none;text-align:center;color:var(--muted);padding:28px;font-size:12px}
+.theme-card,.contact-card{padding:20px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,var(--surface2),var(--surface))}
+.theme-row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.theme-row p{font-size:12px;color:var(--muted)}
+.swatches{display:flex;gap:12px}
+.swatch{width:30px;height:30px;border-radius:50%;border:3px solid var(--surface);outline:1px solid var(--line);transition:.2s}
+.swatch.active{outline:2px solid white;transform:scale(1.1)}
+.contact-card{background:radial-gradient(circle at 0 0,rgba(var(--accent-rgb),.12),transparent 55%),var(--surface)}
+.contact-card h3{font-size:18px;font-weight:900}
+.contact-card>p{font-size:12px;color:var(--muted);line-height:2.2;margin-top:7px}
+.social-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:19px}
+.social-link{min-height:84px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:15px;font-size:11px;font-weight:800;transition:.2s}
+.social-link i{font-size:21px;color:var(--accent)}
+.social-link:hover{transform:translateY(-3px);border-color:var(--accent)}
+.phone-link{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:13px;padding:13px;border-radius:13px;background:var(--accent);color:#111;font-size:13px;font-weight:900}
+footer{text-align:center;padding:28px 0 8px;color:#717b8b;font-size:10px;line-height:2.4}
+footer b{color:var(--accent)}
+.bottom-nav-wrap{position:fixed;z-index:100;bottom:0;left:0;right:0;padding:9px 8px calc(9px + env(safe-area-inset-bottom));background:rgba(12,15,22,.91);backdrop-filter:blur(24px);border-top:1px solid var(--line)}
+.bottom-nav{width:min(620px,100%);margin:auto;display:flex;justify-content:space-around;gap:4px}
+.nav-item{min-width:57px;border:0;background:transparent;color:#8993a3;display:flex;flex-direction:column;align-items:center;gap:5px;padding:5px 8px;font-size:9px;transition:.2s}
+.nav-item i{font-size:18px;transition:.2s}
+.nav-item.active{color:var(--accent)}
+.nav-item.active i{transform:translateY(-3px)}
+.toast{position:fixed;z-index:200;bottom:92px;left:50%;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#202938;border:1px solid var(--line);color:var(--text);padding:12px 17px;border-radius:12px;font-size:11px;box-shadow:0 12px 30px #0008;transition:.25s;max-width:90%;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes blink{50%{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{margin-top:18px}.search-hint{display:none}}
+@media(max-width:440px){.product-grid{gap:9px}.product{padding:14px;border-radius:17px}.product h3{font-size:12px}.product p{font-size:10px;min-height:60px}.product-icon{width:42px;height:42px;flex-basis:42px}.buy-btn{font-size:9px;padding:9px}.section-title{font-size:16px}.brand{font-size:19px}.social-grid{gap:7px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="topbar-wrap">
+ <header class="container topbar">
+  <a class="brand" href="#home" aria-label="فروشگاه مجازی امیر گوگل">
+   <span class="brand-mark"><i class="fa-solid fa-terminal"></i></span>
+   <span>فروشگاه مجازی امیر گوگل<small>AMIR GOOGLE STORE</small></span>
+  </a>
+  <div class="top-actions">
+   <button class="round-btn" onclick="focusSearch()" aria-label="جستجوی محصولات"><i class="fa-solid fa-magnifying-glass"></i></button>
+   <button class="round-btn" onclick="document.getElementById('themes').scrollIntoView({behavior:'smooth'})" aria-label="انتخاب رنگ"><i class="fa-solid fa-palette"></i></button>
+  </div>
+ </header>
+</div>
+
+<main class="container">
+ <section class="hero" id="home">
+  <div class="hero-content">
+   <div class="eyebrow"><span class="pulse"></span> فروشگاه تخصصی محصولات دیجیتال</div>
+   <h1>به <strong>فروشگاه مجازی امیر گوگل</strong> خوش آمدید</h1>
+   <span class="type-line"><span id="typed"></span><span class="cursor"></span></span>
+   <p>آموزش مهارت‌های دیجیتال، محصولات کاربردی و خدمات تبلیغاتی؛ همراهی برای رشد در دنیای فناوری و کسب‌وکار آنلاین.</p>
+   <div class="hero-actions">
+    <a class="btn btn-main" href="#education"><i class="fa-solid fa-graduation-cap"></i> مشاهده آموزش‌ها</a>
+    <a class="btn btn-ghost" href="#digital"><i class="fa-solid fa-store"></i> ورود به فروشگاه</a>
+   </div>
+   <div class="stats">
+    <div class="stat"><b>آموزش</b><span>یادگیری مهارت‌های دیجیتال</span></div>
+    <div class="stat"><b>محصولات</b><span>فایل و راهکارهای کاربردی</span></div>
+    <div class="stat"><b>پشتیبانی</b><span>ارتباط مستقیم برای سفارش</span></div>
+   </div>
+  </div>
+ </section>
+
+ <div class="search-row">
+  <label class="searchbox"><i class="fa-solid fa-magnifying-glass"></i><input id="search" type="search" placeholder="جستجو در آموزش‌ها، محصولات و خدمات..." oninput="searchProducts()"></label>
+  <span class="search-hint">جستجوی سریع محصولات</span>
+ </div>
+
+ <section class="section" id="education">
+  <div class="section-head"><h2 class="section-title"><span class="section-icon"><i class="fa-solid fa-graduation-cap"></i></span>محصولات آموزشی</h2><span class="section-sub">LEARNING</span></div>
+  <div class="product-grid">
+   <article class="product" data-name="آموزش طراحی سایت html css javascript"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-code"></i></span><span class="product-badge">آموزشی</span></div><h3>آموزش طراحی سایت</h3><p>از مبانی HTML و CSS تا JavaScript و ساخت صفحات وب واکنش‌گرا.</p><div class="product-footer"><small>دوره آموزشی</small><button class="buy-btn" onclick="buy('آموزش طراحی سایت')">خرید و اطلاعات <i class="fa-solid fa-arrow-left"></i></button></div></article>
+   <article class="product" data-name="آموزش طراحی اپلیکیشن موبایل"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span class="product-badge">آموزشی</span></div><h3>آموزش طراحی اپلیکیشن</h3><p>آشنایی با اصول طراحی رابط کاربری و توسعه اپلیکیشن موبایل.</p><div class="product-footer"><small>دوره آموزشی</small><button class="buy-btn" onclick="buy('آموزش طراحی اپلیکیشن')">خرید و اطلاعات <i class="fa-solid fa-arrow-left"></i></button></div></article>
+   <article class="product" data-name="آموزش تحلیل بدافزار امنیت سایبری"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-shield-virus"></i></span><span class="product-badge">امنیت سایبری</span></div><h3>آموزش تحلیل بدافزار</h3><p>شناخت رفتار بدافزارها، تحلیل ایمن و بررسی تهدیدها در آزمایشگاه ایزوله.</p><div class="product-footer"><small>دوره آموزشی</small><button class="buy-btn" onclick="buy('آموزش تحلیل بدافزار')">خرید و اطلاعات <i class="fa-solid fa-arrow-left"></i></button></div></article>
+  
+   <article class="product" data-name="آموزش پایتون python برنامه نویسی"><div class="product-top"><span class="product-icon"><i class="fa-brands fa-python"></i></span><span class="product-badge">برنامه‌نویسی</span></div><h3>آموزش پایتون</h3><p>یادگیری قدم‌به‌قدم پایتون از مبانی تا ساخت پروژه‌های کاربردی و تمرینی.</p><div class="product-footer"><small>دوره آموزشی</small><button class="buy-btn" onclick="buy('آموزش پایتون')">خرید و اطلاعات ←</button></div></article>
+   <article class="product" data-name="آموزش هوش مصنوعی ai ابزارهای هوشمند"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-brain"></i></span><span class="product-badge">هوش مصنوعی</span></div><h3>آموزش هوش مصنوعی</h3><p>آشنایی با ابزارهای هوش مصنوعی، مهارت پرامپت‌نویسی و کاربردهای روزمره AI.</p><div class="product-footer"><small>دوره آموزشی</small><button class="buy-btn" onclick="buy('آموزش هوش مصنوعی')">خرید و اطلاعات ←</button></div></article>
+</div>
+ </section>
+
+ <section class="section" id="digital">
+  <div class="section-head"><h2 class="section-title"><span class="section-icon"><i class="fa-solid fa-cubes"></i></span>محصولات دیجیتالی</h2><span class="section-sub">DIGITAL PRODUCTS</span></div>
+  <div class="product-grid">
+   <article class="product" data-name="سایت پزشکی طراحی وب پزشک"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-heart-pulse"></i></span><span class="product-badge">وب‌سایت</span></div><h3>فروش سایت پزشکی</h3><p>وب‌سایت معرفی پزشک، خدمات، اطلاعات مطب و راه‌های ارتباطی.</p><div class="product-footer"><small>محصول دیجیتال</small><button class="buy-btn" onclick="buy('سایت پزشکی')">خرید و اطلاعات ←</button></div></article>
+   <article class="product" data-name="سایت حقوقی وکالت"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-scale-balanced"></i></span><span class="product-badge">وب‌سایت</span></div><h3>فروش سایت حقوقی</h3><p>وب‌سایت حرفه‌ای برای وکلا، مشاوران و مؤسسات حقوقی.</p><div class="product-footer"><small>محصول دیجیتال</small><button class="buy-btn" onclick="buy('سایت حقوقی')">خرید و اطلاعات ←</button></div></article>
+   <article class="product" data-name="سایت فروشگاهی فروشگاه اینترنتی"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-cart-shopping"></i></span><span class="product-badge">وب‌سایت</span></div><h3>فروش سایت فروشگاهی</h3><p>فروشگاه اینترنتی برای معرفی محصولات و دریافت سفارش آنلاین.</p><div class="product-footer"><small>محصول دیجیتال</small><button class="buy-btn" onclick="buy('سایت فروشگاهی')">خرید و اطلاعات ←</button></div></article>
+   <article class="product" data-name="سایت شرکتی معرفی شرکت"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-building"></i></span><span class="product-badge">وب‌سایت</span></div><h3>فروش سایت شرکتی</h3><p>معرفی شرکت، خدمات، نمونه‌کارها و اطلاعات تماس در یک سایت حرفه‌ای.</p><div class="product-footer"><small>محصول دیجیتال</small><button class="buy-btn" onclick="buy('سایت شرکتی')">خرید و اطلاعات ←</button></div></article>
+   <article class="product" data-name="انواع سایت طراحی اختصاصی"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-globe"></i></span><span class="product-badge">طراحی سایت</span></div><h3>فروش انواع سایت‌ها</h3><p>طراحی و ارائه وب‌سایت اختصاصی متناسب با نیاز کسب‌وکار شما.</p><div class="product-footer"><small>سفارش اختصاصی</small><button class="buy-btn" onclick="buy('طراحی انواع سایت')">ثبت سفارش ←</button></div></article>
+   <article class="product" data-name="ربات تلگرامی ربات مدیریت"><div class="product-top"><span class="product-icon"><i class="fa-brands fa-telegram"></i></span><span class="product-badge">ربات</span></div><h3>فروش ربات‌های تلگرامی</h3><p>ربات‌های مدیریتی، خدماتی، اطلاع‌رسانی و اتوماسیون کسب‌وکار.</p><div class="product-footer"><small>محصول دیجیتال</small><button class="buy-btn" onclick="buy('ربات تلگرامی')">خرید و اطلاعات ←</button></div></article>
+   <article class="product" data-name="پیام رسان سازمانی نرم افزار سازمان"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-comments"></i></span><span class="product-badge">نرم‌افزار</span></div><h3>پیام‌رسان سازمانی</h3><p>راهکار ارتباطی اختصاصی برای تیم‌ها، شرکت‌ها و مجموعه‌ها.</p><div class="product-footer"><small>سفارش اختصاصی</small><button class="buy-btn" onclick="buy('پیام رسان سازمانی')">ثبت سفارش ←</button></div></article>
+   <article class="product" data-name="اپلیکیشن موبایل"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-mobile-alt"></i></span><span class="product-badge">اپلیکیشن</span></div><h3>فروش اپلیکیشن</h3><p>طراحی و ارائه اپلیکیشن متناسب با خدمات و مدل کسب‌وکار شما.</p><div class="product-footer"><small>سفارش اختصاصی</small><button class="buy-btn" onclick="buy('اپلیکیشن')">ثبت سفارش ←</button></div></article>
+  </div>
+ </section>
+<section class="section" id="ads">
+  <div class="section-head"><h2 class="section-title"><span class="section-icon"><i class="fa-solid fa-bullhorn"></i></span>خدمات تبلیغاتی</h2><span class="section-sub">ADVERTISING</span></div>
+  <div class="product-grid">
+   <article class="product" data-name="تبلیغات شبکه اجتماعی"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-share-nodes"></i></span><span class="product-badge">تبلیغات</span></div><h3>تبلیغات در شبکه‌های اجتماعی</h3><p>معرفی برند، خدمات و محصولات شما در شبکه‌های اجتماعی.</p><div class="product-footer"><small>خدمات تبلیغاتی</small><button class="buy-btn" onclick="buy('تبلیغات شبکه های اجتماعی')">ثبت سفارش ←</button></div></article>
+   <article class="product" data-name="تبلیغات پیامکی پنل پیامک"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-comment-sms"></i></span><span class="product-badge">پیامک</span></div><h3>تبلیغات پیامکی</h3><p>ارسال پیام‌های تبلیغاتی هدفمند با رعایت قوانین و رضایت دریافت‌کنندگان.</p><div class="product-footer"><small>خدمات تبلیغاتی</small><button class="buy-btn" onclick="buy('تبلیغات پیامکی')">ثبت سفارش ←</button></div></article>
+   <article class="product" data-name="تبلیغات در سایت بنر تبلیغاتی"><div class="product-top"><span class="product-icon"><i class="fa-solid fa-rectangle-ad"></i></span><span class="product-badge">تبلیغات</span></div><h3>تبلیغات در سایت‌ها</h3><p>معرفی کسب‌وکار شما از طریق ظرفیت‌های تبلیغاتی وب‌سایت‌ها.</p><div class="product-footer"><small>خدمات تبلیغاتی</small><button class="buy-btn" onclick="buy('تبلیغات در سایت ها')">ثبت سفارش ←</button></div></article>
+  </div>
+ </section>
+
+ <section class="section" id="themes">
+  <div class="section-head"><h2 class="section-title"><span class="section-icon"><i class="fa-solid fa-palette"></i></span>شخصی‌سازی رنگ</h2><span class="section-sub">CHOOSE YOUR THEME</span></div>
+  <div class="theme-card"><div class="theme-row"><p>رنگ دلخواه رابط کاربری را انتخاب کنید</p><div class="swatches">
+   <button class="swatch active" style="background:#ff8a25" data-color="#ff8a25" data-rgb="255,138,37" aria-label="نارنجی" onclick="setTheme(this)"></button>
+   <button class="swatch" style="background:#00d69b" data-color="#00d69b" data-rgb="0,214,155" aria-label="سبز" onclick="setTheme(this)"></button>
+   <button class="swatch" style="background:#318bff" data-color="#318bff" data-rgb="49,139,255" aria-label="آبی" onclick="setTheme(this)"></button>
+   <button class="swatch" style="background:#a66aff" data-color="#a66aff" data-rgb="166,106,255" aria-label="بنفش" onclick="setTheme(this)"></button>
+   <button class="swatch" style="background:#ff425c" data-color="#ff425c" data-rgb="255,66,92" aria-label="قرمز" onclick="setTheme(this)"></button>
+  </div></div></div>
+ </section>
+
+ <section class="section" id="contact">
+  <div class="contact-card">
+   <h3><i class="fa-solid fa-headset" style="color:var(--accent)"></i> ارتباط با فروشگاه مجازی امیر گوگل</h3>
+   <p>برای استعلام قیمت، دریافت جزئیات محصولات و ثبت سفارش، از راه‌های ارتباطی زیر پیام بدهید.</p>
+   <div class="social-grid">
+     <a class="social-link" href="https://t.me/Sudo_root_txt" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i>تلگرام</a>
+    <a class="social-link" href="https://virasty.com/Amirgoogle" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-at"></i>ویراستی</a>
+    <a class="social-link" href="https://eitaa.com/ClickOnMe313" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-paper-plane"></i>ایتا</a>
+    <a class="social-link" href="https://ble.ir/09028596072" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-comment-dots"></i>بله</a>
+   </div>
+   <a class="phone-link" href="tel:09028596072"><i class="fa-solid fa-phone"></i> تماس: 09028596072</a>
+  </div>
+ </section>
+
+ <footer><b>AMIR GOOGLE</b><br>فروشگاه آموزش، محصولات دیجیتال و خدمات فناوری<br>© تمامی حقوق محفوظ است.</footer>
+</main>
+
+<nav class="bottom-nav-wrap" aria-label="منوی اصلی">
+ <div class="bottom-nav">
+  <button class="nav-item active" data-target="home" onclick="navigateTo('home',this)"><i class="fa-solid fa-house"></i><span>خانه</span></button>
+  <button class="nav-item" data-target="education" onclick="navigateTo('education',this)"><i class="fa-solid fa-graduation-cap"></i><span>آموزش</span></button>
+  <button class="nav-item" data-target="digital" onclick="navigateTo('digital',this)"><i class="fa-solid fa-store"></i><span>محصولات</span></button>
+<button class="nav-item" data-target="contact" onclick="navigateTo('contact',this)"><i class="fa-solid fa-headset"></i><span>ارتباط</span></button>
+ </div>
+</nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const phrases=['آموزش و مهارت‌های دیجیتال','محصولات و ابزارهای کاربردی','فناوری، برنامه‌نویسی و امنیت'];
+let phraseIndex=0,charIndex=0,deleting=false;
+const typed=document.getElementById('typed');
+function typeWriter(){
+ const phrase=phrases[phraseIndex];
+ typed.textContent=phrase.slice(0,charIndex);
+ if(!deleting){charIndex++;if(charIndex>phrase.length){deleting=true;setTimeout(typeWriter,1250);return;}}
+ else{charIndex--;if(charIndex<0){charIndex=0;deleting=false;phraseIndex=(phraseIndex+1)%phrases.length;}}
+ setTimeout(typeWriter,deleting?38:75);
+}
+typeWriter();
+
+function setTheme(button){
+ document.documentElement.style.setProperty('--accent',button.dataset.color);
+ document.documentElement.style.setProperty('--accent-rgb',button.dataset.rgb);
+ document.querySelectorAll('.swatch').forEach(el=>el.classList.remove('active'));
+ button.classList.add('active');
+}
+function focusSearch(){document.getElementById('search').focus();document.getElementById('search').scrollIntoView({behavior:'smooth',block:'center'});}
+function searchProducts(){
+ const query=document.getElementById('search').value.trim().toLocaleLowerCase('fa');
+ let total=0;
+ document.querySelectorAll('.section').forEach(section=>{
+  const cards=section.querySelectorAll('.product');
+  if(!cards.length)return;
+  let visible=0;
+  cards.forEach(card=>{
+   const haystack=(card.dataset.name+' '+card.innerText).toLocaleLowerCase('fa');
+   const match=haystack.includes(query);
+   card.hidden=!match;
+   if(match){visible++;total++;}
+  });
+  section.hidden=visible===0;
+ });
+ let empty=document.getElementById('empty-results');
+ if(!empty){
+  empty=document.createElement('div');empty.id='empty-results';empty.className='empty';
+  empty.textContent='محصولی با این عبارت پیدا نشد.';
+  document.querySelector('.search-row').after(empty);
+ }
+ empty.style.display=query&&total===0?'block':'none';
+}
+function navigateTo(id,button){
+ document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+ document.querySelectorAll('.nav-item').forEach(item=>item.classList.toggle('active',item===button));
+}
+let toastTimer;
+function showToast(message){
+ const toast=document.getElementById('toast');
+ toast.textContent=message;toast.classList.add('show');
+ clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2600);
+}
+function buy(product){
+ const message='سلام، برای خرید یا دریافت اطلاعات محصول «'+product+'» از فروشگاه مجازی امیر گوگل پیام می‌دهم.';
+ const encoded=encodeURIComponent(message);
+ const choice=window.prompt('برای پیگیری سفارش «'+product+'» یکی از راه‌ها را انتخاب کنید:\\n1 = تلگرام\\n2 = ایتا\\n3 = ویراستی\\n4 = بله\\n5 = تماس تلفنی');
+ if(choice==='1')window.open('https://t.me/Sudo_root_txt','_blank','noopener');
+ else if(choice==='2')window.open('https://eitaa.com/ClickOnMe313','_blank','noopener');
+ else if(choice==='3')window.open('https://virasty.com/Amirgoogle','_blank','noopener');
+ else if(choice==='4')window.open('https://ble.ir/09028596072','_blank','noopener');
+ else if(choice==='5')window.location.href='tel:09028596072';
+ else if(choice!==null)showToast('گزینه معتبر نیست؛ لطفاً دوباره تلاش کنید.');
+}
+const navTargets=['home','education','digital','contact'];
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   document.querySelectorAll('.nav-item').forEach(item=>item.classList.toggle('active',item.dataset.target===entry.target.id));
+  }
+ });
+},{rootMargin:'-25% 0px -60% 0px'});
+navTargets.forEach(id=>{const el=document.getElementById(id);if(el)observer.observe(el);});
+</script>
+</body>
+</html>
